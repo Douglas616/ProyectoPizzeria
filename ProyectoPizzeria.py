@@ -55,7 +55,7 @@ def menu():
         print("2. Despachar orden")
         print("3. Mostrar cola")
         print("4. Datos del desarrollador")
-        print("5. Ingreddientes disponibles")
+        print("5. Ingredientes disponibles")
         print("6. Salir")
         opcion = input("Seleccione una opción: ")
 
