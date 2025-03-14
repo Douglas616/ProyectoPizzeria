@@ -1,21 +1,21 @@
-# Definimos la clase Nodo
+
 class Nodo:
     def __init__(self, cliente, cantidad, ingredientes):
         self.cliente = cliente
         self.cantidad = cantidad
         self.ingredientes = ingredientes
         self.tiempo_preparacion = self.calcular_tiempo()
-        self.siguiente = None  # Apunta al siguiente nodo en la cola
+        self.siguiente = None  
 
     def calcular_tiempo(self):
         tiempos = {"Pepperoni": 3, "Salchicha": 4, "Carne": 10, "Queso": 5, "Piña": 2}
         return sum(tiempos[ing] for ing in self.ingredientes) * self.cantidad
 
-# Definimos la clase Cola
+
 class Cola:
     def __init__(self):
-        self.frente = None  # Primer elemento (FIFO)
-        self.final = None   # Último elemento
+        self.frente = None  
+        self.final = None   
 
     def encolar(self, cliente, cantidad, ingredientes):
         nuevo_nodo = Nodo(cliente, cantidad, ingredientes)
@@ -44,7 +44,7 @@ class Cola:
             print(f"🛎 Cliente: {actual.cliente} | Pizzas: {actual.cantidad} | Ingredientes: {', '.join(actual.ingredientes)}")
             actual = actual.siguiente
 
-# Menú de interacción
+
 def menu():
     cola = Cola()
     while True:
@@ -89,6 +89,6 @@ def menu():
         else:
             print("\n❌ Opción inválida, intenta de nuevo.")
 
-# Ejecutar el programa
+
 if __name__ == "__main__":
     menu()
